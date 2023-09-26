@@ -1,0 +1,17 @@
+CREATE TABLE cheap_meals AS 
+SELECT * FROM meals WHERE price < 15;
+
+CREATE TABLE vegan_ingredient AS 
+SELECT * FROM ingredients WHERE false;
+
+INSERT INTO vegan_ingredient AS
+SELECT * FROM ingredients WHERE vegan;
+
+CREATE VIEW expensive_meal AS
+SELECT * FROM meals WHERE price > 15;
+
+CREATE VIEW lactose_free_ingredient AS
+SELECT * FROM ingredients WHERE !contains_lactose;
+
+CREATE TABLE high_calorie_meal AS
+SELECT * FROM meals WHERE calories > 650;
